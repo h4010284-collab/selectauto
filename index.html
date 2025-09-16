@@ -1,240 +1,219 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Select Auto | Vende tu coche sin líos</title>
-  <meta name="description" content="Select Auto vende tu coche en Madrid, Toledo y toda España sin adelantar dinero. Tasamos, publicamos y gestionamos todo por ti." />
-  <meta property="og:title" content="Select Auto | Vende tu coche sin líos">
-  <meta property="og:description" content="Tasamos tu coche, filtramos interesados y gestionamos la venta de principio a fin en toda España." />
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://selecauto.es/">
-  <meta property="og:image" content="assets/img/slide-3.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="assets/img/favicon.png">
-  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Select Auto · Vende tu coche sin líos</title>
+  <meta name="description" content="Select Auto te ayuda a vender tu coche en toda España: tasamos, publicamos, gestionamos interesados y realizamos el cambio de nombre sin complicaciones." />
+  <meta property="og:title" content="Select Auto · Vende tu coche sin líos" />
+  <meta property="og:description" content="Tasación profesional, publicación, filtrado de interesados y cambio de nombre en Tráfico. Tú entregas las llaves y recibes el dinero." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.selectauto.es/" />
+  <meta property="og:image" content="https://www.selectauto.es/favicon.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Select Auto · Vende tu coche sin líos" />
+  <meta name="twitter:description" content="Gestionamos la venta de tu coche en toda España con rapidez, transparencia y sin comisiones ocultas." />
+  <meta name="twitter:image" content="https://www.selectauto.es/favicon.png" />
+  <link rel="canonical" href="https://www.selectauto.es/" />
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <header class="site-header" id="inicio">
-    <nav class="navbar">
-      <div class="container nav-wrapper">
-        <a class="logo" href="#inicio" aria-label="Select Auto">Select Auto</a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú de navegación">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <ul class="nav-menu" id="nav-menu">
-          <li><a href="#inicio">Inicio</a></li>
+  <!-- Navegación principal -->
+  <header class="site-header" id="top">
+    <div class="container nav-container">
+      <a class="brand" href="#top" aria-label="Volver al inicio">Select Auto</a>
+      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="menu-toggle__line"></span>
+        <span class="menu-toggle__line"></span>
+        <span class="menu-toggle__line"></span>
+        <span class="sr-only">Abrir menú</span>
+      </button>
+      <nav class="nav" aria-label="Navegación principal">
+        <ul class="nav-links" id="primary-navigation">
+          <li><a href="#hero">Inicio</a></li>
           <li><a href="#como-funciona">Cómo funciona</a></li>
           <li><a href="#ventajas">Ventajas</a></li>
-          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#opiniones">Opiniones</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
-        <a class="button button-outline" href="https://wa.me/34642950290" target="_blank" rel="noopener">WhatsApp</a>
-      </div>
-    </nav>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <h1 id="hero-title">Vende tu coche sin líos 🚗💸</h1>
-          <p class="hero-subtitle">Tú entregas las llaves y recibes el dinero. Nosotros tasamos, publicamos y gestionamos toda la venta por ti en Madrid, Toledo y el resto de España.</p>
-          <div class="hero-actions">
-            <a class="button" href="#contacto">Solicita tu tasación gratis</a>
-            <a class="button button-secondary" href="https://wa.me/34642950290" target="_blank" rel="noopener">Hablar por WhatsApp</a>
-          </div>
-          <ul class="hero-highlights">
-            <li>Pago seguro y acompañado hasta el cambio de titularidad.</li>
-            <li>Sin adelantar dinero: solo ganamos cuando tu coche se vende.</li>
-            <li>Atención cercana y transparente, estés donde estés.</li>
-          </ul>
+    <!-- Sección Hero -->
+    <section class="hero" id="hero">
+      <div class="container hero__content">
+        <p class="hero__eyebrow">Gestión integral de compraventa de vehículos</p>
+        <h1 class="hero__title">Vende tu coche sin líos 🚗💸</h1>
+        <p class="hero__subtitle">Tú entregas las llaves y recibes el dinero. Nosotros tasamos, publicamos, filtramos interesados, negociamos y hacemos el cambio de nombre en Tráfico.</p>
+        <p class="hero__location">Select Auto · Madrid y Toledo con cobertura en toda España.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#contacto">Quiero vender mi coche</a>
+          <a class="btn btn--ghost" href="#como-funciona">Descubrir el proceso</a>
         </div>
-        <figure class="hero-image">
-          <img src="assets/img/slide-3.jpg" alt="Equipo de Select Auto valorando un coche" loading="lazy">
-        </figure>
+        <div class="hero__trust">
+          <p>+500 clientes satisfechos confían en nuestra transparencia y rapidez.</p>
+        </div>
+      </div>
+      <div class="hero__background" aria-hidden="true"></div>
+    </section>
+
+    <!-- Sección Cómo funciona -->
+    <section class="section" id="como-funciona">
+      <div class="container section__inner">
+        <header class="section__header">
+          <h2>Cómo funciona</h2>
+          <p>Un proceso claro, rápido y sin complicaciones para que vender tu coche sea tan sencillo como entregar las llaves.</p>
+        </header>
+        <div class="steps">
+          <article class="step-card">
+            <span class="step-card__number">1</span>
+            <h3>Tasación profesional</h3>
+            <p>Revisamos tu vehículo de forma presencial u online y te entregamos una tasación honesta basada en datos reales de mercado.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-card__number">2</span>
+            <h3>Publicación destacada</h3>
+            <p>Creamos un anuncio atractivo con fotografías profesionales y lo publicamos en los portales líderes para maximizar la visibilidad.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-card__number">3</span>
+            <h3>Gestión de interesados</h3>
+            <p>Filtramos llamadas, resolvemos dudas y organizamos las visitas con compradores realmente cualificados, sin que tengas que preocuparte.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-card__number">4</span>
+            <h3>Venta y cambio de nombre</h3>
+            <p>Negociamos por ti, formalizamos el contrato y realizamos todo el papeleo en Tráfico. Tú recibes el pago con total seguridad.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="como-funciona" aria-labelledby="como-funciona-title">
-      <div class="container">
-        <h2 class="section-title" id="como-funciona-title">Cómo funciona</h2>
-        <p class="section-lead">Un proceso ágil y transparente para que vendas tu coche sin perder tiempo ni asumir riesgos.</p>
-        <div class="steps-grid">
-          <article class="card step-card">
-            <div class="step-icon" aria-hidden="true">🔎</div>
-            <h3>Tasamos tu coche</h3>
-            <p>Recogemos los datos y el estado de tu vehículo para fijar un precio realista y competitivo en el mercado.</p>
+    <!-- Sección Ventajas -->
+    <section class="section section--alt" id="ventajas">
+      <div class="container section__inner">
+        <header class="section__header">
+          <h2>Ventajas de Select Auto</h2>
+          <p>Tu tiempo es valioso. Nosotros nos encargamos de todo con transparencia y un trato cercano.</p>
+        </header>
+        <div class="benefits">
+          <article class="benefit-card">
+            <h3>Sin comisiones ocultas</h3>
+            <p>Conoce desde el primer momento nuestros honorarios y el precio final de venta. No hay sorpresas, solo claridad.</p>
           </article>
-          <article class="card step-card">
-            <div class="step-icon" aria-hidden="true">📣</div>
-            <h3>Publicamos y filtramos interesados</h3>
-            <p>Hacemos fotos profesionales, publicamos anuncios y coordinamos las visitas con compradores serios.</p>
-          </article>
-          <article class="card step-card">
-            <div class="step-icon" aria-hidden="true">✅</div>
-            <h3>Vendemos y gestionamos cambio de nombre</h3>
-            <p>Negociamos la mejor oferta, acompañamos en la firma y nos ocupamos de toda la documentación y Tráfico.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt" id="ventajas" aria-labelledby="ventajas-title">
-      <div class="container">
-        <h2 class="section-title" id="ventajas-title">Ventajas de Select Auto</h2>
-        <p class="section-lead">Tu tiempo es oro. Por eso nos encargamos de cada detalle de la venta con total transparencia.</p>
-        <div class="benefits-grid">
-          <article class="card benefit-card">
-            <h3>Sin adelantar dinero</h3>
-            <p>Solo ganamos si tú ganas. Nuestros honorarios se deducen cuando la venta se cierra y recibes tu pago.</p>
-          </article>
-          <article class="card benefit-card">
-            <h3>Gestión integral</h3>
-            <p>Desde las fotos y los anuncios hasta las visitas y el papeleo. Tú solo disfrutas del proceso sin estrés.</p>
-          </article>
-          <article class="card benefit-card">
+          <article class="benefit-card">
             <h3>Transparencia total</h3>
-            <p>Informes constantes, atención cercana y acompañamiento personalizado durante todo el proceso.</p>
+            <p>Te mantenemos informado de cada paso del proceso con informes de visitas, ofertas y documentación.</p>
           </article>
-          <article class="card benefit-card">
-            <h3>Cobertura nacional</h3>
-            <p>Estamos en Madrid y Toledo, pero vendemos tu coche en cualquier punto de España gracias a nuestra red.</p>
+          <article class="benefit-card">
+            <h3>Rapidez garantizada</h3>
+            <p>En una media de 15 días conseguimos cerrar la operación con el comprador idóneo, sin perder valor en el camino.</p>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="testimonios" aria-labelledby="testimonios-title">
-      <div class="container">
-        <h2 class="section-title" id="testimonios-title">Clientes que ya confiaron en Select Auto</h2>
-        <p class="section-lead">Historias reales de propietarios que vendieron su coche sin complicaciones.</p>
-        <div class="testimonial-grid">
-          <article class="card testimonial-card">
-            <p class="testimonial-quote">“En menos de dos semanas tenían comprador y me acompañaron a firmar. No tuve que preocuparme por nada.”</p>
-            <p class="testimonial-author">Laura, Madrid</p>
-          </article>
-          <article class="card testimonial-card">
-            <p class="testimonial-quote">“Me consiguieron un precio mejor que el que me ofrecían los compraventas y gestionaron todo el papeleo.”</p>
-            <p class="testimonial-author">Javier, Toledo</p>
-          </article>
-          <article class="card testimonial-card">
-            <p class="testimonial-quote">“Comunicación excelente y mucha transparencia. Repetiría sin dudarlo para mi próximo vehículo.”</p>
-            <p class="testimonial-author">Marta, Valencia</p>
+          <article class="benefit-card">
+            <h3>Nos encargamos de todo</h3>
+            <p>Desde la sesión de fotos hasta el cambio de titularidad. Tú solo disfrutas del resultado y del ingreso en tu cuenta.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-contact" id="contacto" aria-labelledby="contacto-title">
-      <div class="container contact-wrapper">
-        <div class="contact-info">
-          <h2 class="section-title" id="contacto-title">Rellena el formulario y te contactamos hoy mismo</h2>
-          <p class="section-lead">Atendemos en Madrid, Toledo y toda España. También puedes escribirnos directamente:</p>
-          <ul class="contact-list">
-            <li><strong>WhatsApp:</strong> <a href="https://wa.me/34642950290" target="_blank" rel="noopener">+34 642 950 290</a></li>
-            <li><strong>Email:</strong> <a href="mailto:info@selecauto.es">info@selecauto.es</a></li>
-            <li><strong>Dirección legal:</strong> Autónomo – Calle Esquivias 17, Yuncos, Toledo 45210</li>
-          </ul>
+    <!-- Sección Opiniones -->
+    <section class="section" id="opiniones">
+      <div class="container section__inner">
+        <header class="section__header">
+          <h2>Opiniones reales</h2>
+          <p>La confianza de nuestros clientes nos motiva a seguir ofreciendo un servicio excelente.</p>
+        </header>
+        <div class="testimonials">
+          <figure class="testimonial">
+            <blockquote>
+              “En menos de dos semanas vendieron mi coche por el precio que yo quería. Me sentí acompañada y segura en todo momento.”
+            </blockquote>
+            <figcaption>
+              <span class="testimonial__name">Laura M.</span>
+              <span class="testimonial__meta">Madrid · Audi A3</span>
+            </figcaption>
+          </figure>
+          <figure class="testimonial">
+            <blockquote>
+              “Pensaba que vender un coche de empresa sería un caos, pero Select Auto se ocupó de todo. Comunicación constante y cero estrés.”
+            </blockquote>
+            <figcaption>
+              <span class="testimonial__name">Javier R.</span>
+              <span class="testimonial__meta">Toledo · Flota corporativa</span>
+            </figcaption>
+          </figure>
+          <figure class="testimonial">
+            <blockquote>
+              “Su tasación fue la más realista y cumplieron con los plazos acordados. Sin comisiones sorpresa y con el dinero en mi cuenta al instante.”
+            </blockquote>
+            <figcaption>
+              <span class="testimonial__name">Sofía L.</span>
+              <span class="testimonial__meta">Valencia · BMW Serie 1</span>
+            </figcaption>
+          </figure>
         </div>
-        <form class="contact-form" id="contact-form" novalidate>
-          <div class="form-grid">
-            <label class="form-field">
-              <span>Nombre *</span>
-              <input type="text" name="nombre" required autocomplete="name" placeholder="Tu nombre">
-            </label>
-            <label class="form-field">
-              <span>Teléfono *</span>
-              <input type="tel" name="telefono" required autocomplete="tel" placeholder="Ej. 600 000 000">
-            </label>
-            <label class="form-field">
-              <span>Email</span>
-              <input type="email" name="email" autocomplete="email" placeholder="tucorreo@example.com">
-            </label>
-            <label class="form-field">
-              <span>Matrícula *</span>
-              <input type="text" name="matricula" required placeholder="Ej. 1234 ABC">
-            </label>
-            <label class="form-field">
-              <span>Modelo / Versión</span>
-              <input type="text" name="modelo" placeholder="Marca y versión">
-            </label>
-            <label class="form-field">
-              <span>Ciudad / Provincia</span>
-              <input type="text" name="ciudad" placeholder="Dónde está el vehículo">
-            </label>
-          </div>
-          <label class="form-field">
-            <span>Mensaje</span>
-            <textarea name="mensaje" rows="4" placeholder="Cuéntanos cualquier detalle adicional"></textarea>
-          </label>
-          <label class="form-checkbox">
-            <input type="checkbox" id="acepto" name="acepto" required>
-            <span>Acepto la <a href="#politica-privacidad">política de privacidad</a> y el tratamiento de mis datos.</span>
-          </label>
-          <div class="form-actions">
-            <button class="button" type="submit">Solicitar tasación</button>
-            <a class="button button-secondary" href="https://wa.me/34642950290" target="_blank" rel="noopener">WhatsApp</a>
-          </div>
-          <div class="form-messages">
-            <p class="form-message success" id="form-success" role="status" aria-live="polite"></p>
-            <p class="form-message error" id="form-error" role="alert"></p>
-          </div>
-        </form>
       </div>
     </section>
 
-    <section class="section legal" id="legal" aria-label="Información legal">
-      <div class="container legal-container">
-        <details id="aviso-legal">
-          <summary>Aviso legal</summary>
-          <p>Select Auto opera como trabajador autónomo en España. Titular: Select Auto, con domicilio en Calle Esquivias 17, Yuncos, Toledo 45210. Para cualquier consulta puedes escribir a <a href="mailto:info@selecauto.es">info@selecauto.es</a>.</p>
-          <p>La información publicada en esta web tiene carácter informativo. Select Auto no se responsabiliza del uso que terceros puedan hacer de los contenidos. Queda prohibida la reproducción total o parcial sin autorización expresa.</p>
-        </details>
-        <details id="politica-privacidad">
-          <summary>Política de privacidad</summary>
-          <p>Los datos facilitados en el formulario se utilizan exclusivamente para valorar tu vehículo y contactarte en relación con el servicio solicitado. El responsable del tratamiento es Select Auto (autónomo). No cedemos tus datos a terceros salvo obligación legal.</p>
-          <p>Puedes ejercer tus derechos de acceso, rectificación, supresión y demás previstos en el RGPD escribiendo a <a href="mailto:info@selecauto.es">info@selecauto.es</a>. Conservaremos tus datos el tiempo estrictamente necesario para gestionar tu petición.</p>
-        </details>
-        <details id="politica-cookies">
-          <summary>Política de cookies</summary>
-          <p>Utilizamos cookies técnicas necesarias para el funcionamiento del sitio y cookies analíticas propias para medir el rendimiento de nuestras campañas. No se emplean cookies publicitarias de terceros.</p>
-          <p>Puedes configurar tu navegador para aceptar, bloquear o eliminar las cookies instaladas. Para más información contacta con <a href="mailto:info@selecauto.es">info@selecauto.es</a>.</p>
-        </details>
+    <!-- Sección Contacto -->
+    <section class="section section--alt" id="contacto">
+      <div class="container section__inner">
+        <header class="section__header">
+          <h2>Hablemos de tu coche</h2>
+          <p>Cuéntanos qué vehículo quieres vender y nos pondremos en contacto en menos de 24 horas hábiles.</p>
+        </header>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Contacto directo</h3>
+            <p>📞 <a href="tel:+34912345678">91 234 56 78</a></p>
+            <p>📧 <a href="mailto:hola@selectauto.es">hola@selectauto.es</a></p>
+            <p>📍 Oficinas en Madrid y Toledo · Servicio en toda España</p>
+            <p class="contact-info__note">Nos adaptamos a tu agenda para valorar el vehículo y acompañarte durante la venta.</p>
+          </div>
+          <div class="contact-form">
+            <div class="iframe-wrapper">
+              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdfD4wm2-Rz6CIEBYCz52HI4wC7jAn8FffjOH_QXIJrugCrWw/viewform?embedded=true"
+                width="100%" height="1229" frameborder="0" marginheight="0" marginwidth="0" title="Formulario de contacto Select Auto">
+                Cargando…
+              </iframe>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer" aria-label="Pie de página">
-    <div class="container footer-grid">
+  <!-- Pie de página -->
+  <footer class="site-footer">
+    <div class="container footer__grid">
       <div>
-        <p>&copy; <span id="current-year"></span> Select Auto. Todos los derechos reservados.</p>
-        <p>Autónomo – Calle Esquivias 17, Yuncos, Toledo 45210. Cobertura en toda España.</p>
+        <a class="brand brand--footer" href="#top">Select Auto</a>
+        <p>Especialistas en la venta segura de vehículos de segunda mano en toda España.</p>
+        <p class="footer__copy">© <span id="current-year"></span> Select Auto Gestión de Vehículos, S.L. Todos los derechos reservados.</p>
       </div>
-      <nav class="footer-links" aria-label="Enlaces legales">
-        <a href="#aviso-legal">Aviso legal</a>
-        <a href="#politica-privacidad">Privacidad</a>
-        <a href="#politica-cookies">Cookies</a>
-      </nav>
+      <div>
+        <h3>Legal</h3>
+        <ul class="footer__links">
+          <li><a href="aviso-legal.html">Aviso legal</a></li>
+          <li><a href="privacidad.html">Política de privacidad</a></li>
+          <li><a href="cookies.html">Política de cookies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contacto</h3>
+        <ul class="footer__links">
+          <li><a href="tel:+34912345678">91 234 56 78</a></li>
+          <li><a href="mailto:hola@selectauto.es">hola@selectauto.es</a></li>
+          <li>Madrid · Toledo · España</li>
+        </ul>
+      </div>
     </div>
   </footer>
 
-  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
-    <div class="cookie-content">
-      <p>Usamos cookies funcionales y analíticas para ofrecerte un servicio mejor. Al continuar aceptas su uso.</p>
-      <div class="cookie-actions">
-        <a href="#politica-cookies">Más información</a>
-        <button class="button" id="cookie-accept" type="button">Aceptar</button>
-      </div>
-    </div>
-  </div>
-
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
 </body>
-
 </html>
