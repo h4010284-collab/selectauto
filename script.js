@@ -1,132 +1,92 @@
-(function () {
-  const header = document.querySelector('.site-header');
-  const navToggle = document.querySelector('.nav-toggle');
-  const navMenu = document.getElementById('nav-menu');
-  const yearSpan = document.getElementById('current-year');
-  const form = document.getElementById('contact-form');
-  const successMessage = document.getElementById('form-success');
-  const errorMessage = document.getElementById('form-error');
-  const cookieBanner = document.getElementById('cookie-banner');
-  const cookieAccept = document.getElementById('cookie-accept');
+/*
+ * Select Auto - Interacciones front-end
+ * Funciones incluidas:
+ *  - Menú responsive accesible
+ *  - Destacado de enlaces activos según sección visible
+ *  - Animaciones de aparición progresiva
+ *  - Año dinámico en el pie de página
+ */
 
-  const closeMenu = () => {
-    if (!navMenu || !navToggle) return;
-    navMenu.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
-  };
+document.addEventListener('DOMContentLoaded', () => {
+  const navLinks = document.querySelector('.nav-links');
+  const menuToggle = document.getElementById('menu-toggle');
+  const navAnchors = navLinks ? Array.from(navLinks.querySelectorAll('a')) : [];
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  if (navToggle && navMenu) {
-    navToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-      const expanded = navMenu.classList.contains('open');
-      navToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-    });
-  }
-
-  const anchorLinks = document.querySelectorAll('a[href^="#"]');
-  anchorLinks.forEach((link) => {
-    link.addEventListener('click', (event) => {
-      const targetId = link.getAttribute('href');
-      if (!targetId || targetId.length <= 1) return;
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        event.preventDefault();
-        targetElement.scrollIntoView({ behavior: 'smooth' });
-        if (window.innerWidth <= 800) {
-          closeMenu();
+  // Menú hamburguesa accesible para móviles
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.querySelector('.sr-only').textContent = isOpen ? 'Cerrar menú' : 'Abrir menú';
+      if (isOpen) {
+        const firstLink = navLinks.querySelector('a');
+        if (firstLink) {
+          firstLink.focus();
         }
       }
     });
-  });
 
-  if (navMenu) {
-    navMenu.querySelectorAll('a').forEach((navLink) => {
-      navLink.addEventListener('click', closeMenu);
-    });
-  }
-
-  const handleScroll = () => {
-    if (!header) return;
-    if (window.scrollY > 20) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  };
-
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll();
-
-  if (yearSpan) {
-    yearSpan.textContent = String(new Date().getFullYear());
-  }
-
-  if (form) {
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      successMessage?.classList.remove('visible');
-      errorMessage?.classList.remove('visible');
-
-      const formData = new FormData(form);
-      const requiredFields = ['nombre', 'telefono', 'matricula'];
-      let hasErrors = false;
-
-      requiredFields.forEach((field) => {
-        const value = formData.get(field);
-        const formattedValue = typeof value === 'string' ? value.trim() : '';
-        if (!formattedValue) {
-          hasErrors = true;
-        } else {
-          formData.set(field, formattedValue);
-        }
+    navAnchors.forEach((anchor) => {
+      anchor.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.querySelector('.sr-only').textContent = 'Abrir menú';
       });
+    });
 
-      const privacyAccepted = form.querySelector('#acepto');
-      if (!(privacyAccepted instanceof HTMLInputElement) || !privacyAccepted.checked) {
-        hasErrors = true;
+    document.addEventListener('keydown', (event) => {
+      const isEscape = event.key === 'Escape' || event.key === 'Esc';
+      if (isEscape && navLinks.classList.contains('open')) {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.querySelector('.sr-only').textContent = 'Abrir menú';
+        menuToggle.focus();
       }
-
-      if (hasErrors) {
-        if (errorMessage) {
-          errorMessage.textContent = 'Por favor, completa los campos obligatorios y acepta la política de privacidad.';
-          errorMessage.classList.add('visible');
-        }
-        return;
-      }
-
-      const submitButton = form.querySelector('button[type="submit"]');
-      if (submitButton) {
-        submitButton.setAttribute('disabled', 'disabled');
-      }
-
-      const payload = Object.fromEntries(formData.entries());
-      console.group('Formulario Select Auto');
-      console.info('Destino simulado: info@selecauto.es');
-      console.table(payload);
-      console.groupEnd();
-
-      window.setTimeout(() => {
-        form.reset();
-        if (submitButton) {
-          submitButton.removeAttribute('disabled');
-        }
-        if (successMessage) {
-          successMessage.textContent = 'Gracias, te contactamos hoy mismo.';
-          successMessage.classList.add('visible');
-        }
-      }, 900);
     });
   }
 
-  if (cookieBanner && cookieAccept) {
-    const consent = window.localStorage.getItem('selectautoCookieConsent');
-    if (!consent) {
-      cookieBanner.classList.add('visible');
-    }
+  // Destacar enlace activo según la sección visible en el viewport
+  const sections = document.querySelectorAll('section[id]');
+  const observerOptions = {
+    threshold: 0.35,
+  };
 
-    cookieAccept.addEventListener('click', () => {
-      window.localStorage.setItem('selectautoCookieConsent', 'accepted');
-      cookieBanner.classList.remove('visible');
+  const highlightNavigation = (entryId) => {
+    navAnchors.forEach((anchor) => {
+      const isActive = anchor.getAttribute('href') === `#${entryId}`;
+      anchor.classList.toggle('is-active', isActive);
+    });
+  };
+
+  const onIntersect = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        highlightNavigation(entry.target.id);
+        entry.target.classList.add('is-visible');
+      }
+    });
+  };
+
+  if ('IntersectionObserver' in window && sections.length) {
+    const observer = new IntersectionObserver(onIntersect, observerOptions);
+    sections.forEach((section) => {
+      section.classList.add('fade-in');
+      observer.observe(section);
+    });
+  } else {
+    sections.forEach((section) => section.classList.add('is-visible'));
+  }
+
+  if (prefersReducedMotion) {
+    sections.forEach((section) => {
+      section.classList.remove('fade-in');
     });
   }
-})();
+
+  // Añadir año actual en el pie de página
+  const yearElement = document.getElementById('current-year');
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+});
